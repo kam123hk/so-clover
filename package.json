@@ -1,0 +1,16 @@
+{
+  "type": "module",
+  "name": "so-clover",
+  "version": "1.0.0",
+  "description": "So Clover word game",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "wordlist-english": "^1.2.1"
+  }
+}
