@@ -1,11 +1,18 @@
 export class Card {
-    constructor(words) {
-        this._words = words
-        this.orientation = 0
+    constructor(card) {
+        this._words = card
+        this.orientation2 = 0
     }
-    get words () {
+    get words() {
         const numberOfWords = this._words.length
-        return this._words.map((_, index, arr) => arr[numberOfWords - index - this.orientation]) 
-        
+        return this._words.map((_, index, arr) => arr[(index + this.orientation2) % numberOfWords]) 
+                }
+    get clockwise() {
+        this.orientation2 += 3;
+        return this.words;
+                    }
+    get antiClockwise() {
+        this.orientation2 += 1;
+        return this.words;
     }
-}
+    }
