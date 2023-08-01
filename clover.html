@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>2x2 Grid Example</title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 1px;
+      width: 320px;
+      height: 320px;
+      border: 1px solid black;
+      background-color: lightgray;
+      float: left;
+    }
+
+    .grid-item {
+      background-color: white;
+      border: 1px solid black;
+    }
+
+    .rectangle {
+      width: 80px;
+      height: 320px;
+      background-color: lightblue;
+      margin-right: 10px;
+    }
+
+    .rectangle-rotated {
+      width: 320px;
+      height: 80px;
+      background-color: lightgreen;
+      margin-top: 10px;
+      margin-left: 100px;
+    }
+
+    .rectangle-left {
+      width: 80px;
+      height: 320px;
+      background-color: lightblue;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+
+    .rectangle-top {
+      width: 320px;
+      height: 80px;
+      background-color: lightgreen;
+      margin-right: 10px;
+      margin-left: 100px;
+    }
+
+    .slot {
+      width: 160px;
+      height: 160px;
+      background-color: white;
+      border: 1px solid black;
+      margin: 10px;
+    /*  position: relative; CHECK AS THIS LINE NOT HERE PREVIOSLY*/
+    }
+
+    /* New CSS styles for updated elements */
+    .card-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .column-container {
+      display: flex;
+      flex-direction: column;   /* ADDED THIS FOR ROTATE CARD/SLOT BUTTONS */
+    }
+    .slot-container {
+      display: flex;
+      flex-direction: row;
+    }
+    /* Styles for the button when it's unpressed */
+  .unpressed {
+    background-color: white;  /*changed from lightgray to match colour of cards 26/7/23 */
+    color: black;
+  }
+
+  /* Styles for the button when it's pressed */
+  .pressed {
+    background-color: lightblue;
+    color: red;
+  }
+  </style>
+</head>
+<body>
+  <script src="app.js" type="module"></script>
+  <script src="Board.js" type="module"></script>
+  <script>
+    
+    function toggleButton(pressedButton) {
+      const button = document.getElementById(pressedButton);
+      if (button.textContent) {
+        return toggleButton2(pressedButton);
+      }
+    }
+    let currentPressedButtonId = null;  // the buttonId of button that is currently pressed (null means no button pressed)
+    let secondPressedButtonId = null;
+    function toggleButton2(buttonId) {
+      const button = document.getElementById(buttonId); // button id of toggled button in html body (what you are pressing now)
+    /*  if (button === currentPressedButtonId) {    // if button id of toggled is same as id of button currently pressed
+        console.log('poopywoopy');
+        currentPressedButtonId = secondPressedButtonId;  // denotes oldest button pressed is now the secondButton (which was newest)
+        secondPressedButtonId = null;     //only one button is pressed now
+        button.classList.remove('pressed'); // Remove the pressed class from this buttonId
+        button.classList.add('unpressed'); // Add the unpressed class to this buttonId  */
+        if (button === currentPressedButtonId) {    // 26/7/23 -AMENDED THIS FIRST IF STATEMENT THE DELETIONS ABOVE:
+        currentPressedButtonId = null;              // : SO THAT NO NEED TO CHANGE BETWEEN CURRENT AND SECOND BUTTON.
+        button.classList.remove('pressed'); // Remove the pressed class from this buttonId
+        button.classList.add('unpressed');
+        } else if (button === secondPressedButtonId) {
+          secondPressedButtonId = null;
+          button.classList.remove('pressed');
+          button.classList.add('unpressed');
+          } else if (currentPressedButtonId === null && secondPressedButtonId === null) {
+            console.log('luupy');
+            currentPressedButtonId = button;
+            button.classList.remove('unpressed');
+            button.classList.add('pressed');
+            } else if (button !== currentPressedButtonId && secondPressedButtonId === null) {
+              console.log('this should work');
+              secondPressedButtonId = button;
+              button.classList.remove('unpressed');
+              button.classList.add('pressed');
+              } else if (button !== secondPressedButtonId && currentPressedButtonId === null) {
+              console.log('this should work22222');       //ADDED THIS 28/7/23
+              currentPressedButtonId = button;
+              button.classList.remove('unpressed');
+              button.classList.add('pressed');
+              } else {
+                console.log('tyiirp');
+                //boards[0].addCardToBoard(boards[0].cards,parseInt(currentPressedButtonId),boards[0].cards,parseInt(button));
+                currentPressedButtonId.classList.remove('pressed');
+                currentPressedButtonId.classList.add('unpressed');
+                secondPressedButtonId.classList.remove('pressed');  // 26/7/23 -ADDED THIS SO IF TWO BUTTONS ALREADY PRESSED:
+                secondPressedButtonId.classList.add('unpressed');   // :THEN NEW BUTTON IS ONLY PRESSED (OTHERS UNPRESS)
+                button.classList.remove('unpressed');
+                button.classList.add('pressed');
+                //currentPressedButtonId = secondPressedButtonId;
+                //secondPressedButtonId = button;
+                currentPressedButtonId = button;      // 26/723 -NEWLY ADDED THESE TWO LINES SO THAT CURRENT IS JUST PRESSED BUTTON:
+                secondPressedButtonId = null;         // :AND NO OTHER BUTTON PRESSED.
+      //  updateBoard2();
+      }
+    }
+    </script>
+
+  <div class="rectangle-top"></div>
+  <div class="container">
+    <div class="rectangle-left"></div>
+    <div id="grid" class="grid-container">
+      <div>
+        <button id="card1" class="grid-item unpressed" onclick="toggleButton('card1')"></button>
+      </div>
+      <div>
+        <button id="card2" class="grid-item unpressed" onclick="toggleButton('card2')"></button>
+      </div>
+      <div>
+        <button id="card3" class="grid-item unpressed" onclick="toggleButton('card3')"></button>
+      </div>
+      <div>
+        <button id="card4" class="grid-item unpressed" onclick="toggleButton('card4')"></button>
+      </div>
+    </div>
+    <div class="rectangle"></div>
+    <div class="column-container"> 
+    <div><button id="card0ClockwiseButton">Rotate card0 clockwise</button></div>
+    </div>
+    <div class="column-container">
+    <div><button id="card0AnticlockwiseButton">Rotate card0 Anticlockwise</button></div>
+    <div><button id="swapSlot0Card0Button">swap card0 slot0</button></div>
+    <div><button id="seeOriginalCardsButton">see original cards</button></div>
+    
+    <div><button id="swapSlotsButton">Swap slots</button></div>
+    <div><button id="swapCardsButton">Swap cards</button></div>
+    <div><button id="swapSwapButton">Swap swap</button></div> <!-- 27/7/23 ACTUALLY doing the card/slot swap, any swap valid -->
+    </div>
+    </div>
+  </div>
+  <div class="rectangle-rotated"></div>
+  <div class="container">
+    <!-- Updated slots with card containers -->
+    <div id="row-slots" class="slot-container">
+    <div>
+      <button id="slot1" class="slot unpressed" onclick="toggleButton('slot1')"></button>
+    </div>
+    <div>
+      <button id="slot2" class="slot unpressed" onclick="toggleButton('slot2')"></button>
+    </div>
+    <div>
+      <button id="slot3" class="slot unpressed" onclick="toggleButton('slot3')"></button>
+    </div>
+    <div>
+      <button id="slot4" class="slot unpressed" onclick="toggleButton('slot4')"></button>
+    </div>
+    <div>
+      <button id="slot5" class="slot unpressed" onclick="toggleButton('slot5')"></button>
+    </div>
+    <div>
+      <button id="slot6" class="slot unpressed" onclick="toggleButton('slot6')"></button>
+    </div>
+    </div>
+  </div>
+  <div><button id="boardAnticlockwiseButton">Rotate board anti-clockwise</button></div>
+  <div><button id="boardClockwiseButton">Rotate board clockwise</button></div>
+  <div><button id="startGameButton">Start game</button></div>
+  
+</body>
+</html>
