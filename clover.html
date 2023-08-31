@@ -3,11 +3,170 @@
 <head>
   <title>2x2 Grid Example</title>
   <style>
+    .return-button {
+      z-index: 10;
+      position: absolute;
+      bottom: 3px;
+      left: 6px;
+      background-color: palevioletred;
+      display: block;
+    }
+    .proceed-button {
+      z-index: 10;
+      position: absolute;
+      bottom: 3px;
+      right: 6px;      
+      background-color: palegreen;
+      display: block;
+    }
+    .rotate-board-button {
+      width: 80px;
+      height: 80px;
+      background-color: whitesmoke;
+      margin-right: 10px;
+      margin-left: 10px;
+      margin-top: 10px;
+      display: flex;
+      justify-content: center; /* Center the content horizontally */
+      align-items: center; /* Center the input vertically */
+      padding: 10px;
+      
+    }
+    .rotate-card-button {
+      width: 80px;
+      height: 80px;
+      background-color: whitesmoke;
+      margin-right: 10px;
+      margin-left: 10px;
+      margin-top: 10px; /* ADDED 12/8/23 */
+      display: flex;
+      justify-content: center; /* Center the content horizontally */
+      align-items: center; /* Center the input vertically */
+      padding: 10px;
+    }
+    .text-box {
+      width: 480px;
+      background-color: #ffe6e6; /* Light red background */
+      border: 2px solid #ff3333; /* Dark red border */
+      padding: 15px; /* Space inside the box */
+      margin-bottom: 15px; /* Space between boxes if needed */
+      color: #ff3333; /* Dark red text color */
+      font-size: 16px; /* Font size for the text */
+      line-height: 1.5; /* Line height for better readability */
+      border-radius: 5px; /* Rounded corners */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+      display: none;
+    }
+    .summary-box {
+      z-index: 9;
+      position: relative; /* 24/8/23 ADDED to ensure the buttons at the bottom of this can be absolute */
+      width: 300px;
+      height: 270px;
+      margin-left: 40px;
+      background-color: lightgray; /* Light red background */
+      border: 2px solid black; /* Dark red border */
+      padding: 15px; /* Space inside the box */
+      margin-bottom: 15px; /* Space between boxes if needed */
+      color: black; /* Dark red text color */
+      font-size: 16px; /* Font size for the text */
+      line-height: 1.5; /* Line height for better readability */
+      border-radius: 5px; /* Rounded corners */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+      display: block;
+    }
+    .input-field {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background-color: transparent;
+      font-size: 22px; /* 12/8/23 was 16px */
+      text-align: center; /* Center the text horizontally */
+    }
+    .input-field-rotated-clockwise {
+      width: 100%;  /* IT ONLY GOES UP TO 100% IT SEEMS... */
+      width: 320px; /* 12/8/23 */
+      height: 25%; /* 12/8/23 */
+      padding: 10px; 
+      border: none;
+      background-color: transparent;
+      font-size: 22px;
+      text-align: center; /* Center the text horizontally */
+      writing-mode: vertical-rl; /*Set the text to be vertical, right to left */
+      text-orientation: mixed;
+      transform: rotate(90deg); /* Rotate the text vertically */
+      transform-origin: initial; /* Reset rotation origin for the text input */
+      /* writing-mode: vertical-rl;  Set the text to be vertical, right to left */
+    }
+    .input-field-rotated-anticlockwise {
+      width: 100%;  /* IT ONLY GOES UP TO 100% IT SEEMS... */
+      width: 320px; /* 12/8/23 */
+      height: 25%; /* 12/8/23 */
+      padding: 10px; 
+      border: none;
+      background-color: transparent;
+      font-size: 22px;
+      text-align: center; /* Center the text horizontally */
+      writing-mode: vertical-rl; /*Set the text to be vertical, right to left */
+      text-orientation: mixed;
+      transform: rotate(-90deg); /* Rotate the text vertically */
+      transform-origin: initial; /* Reset rotation origin for the text input */
+      /* writing-mode: vertical-rl;  Set the text to be vertical, right to left */
+    }
+/*    .vertical-input {
+  width: 80px;
+  height: 320px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  transform: rotate(90deg); / Rotate the input field /
+  transform-origin: left bottom; / Set the rotation origin /
+  white-space: nowrap; / Prevent text wrapping /
+} */
+.vertical-input {
+  width: 100%;
+  width: 200px; /* Adjust the height for a longer input */
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  background-color: transparent;
+  text-align: center;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(90deg); /* Reset rotation for the text input */
+  transform-origin: initial; /* Reset rotation origin for the text input */
+}
+    .rectangle-left2 { /*TESTING FOR vertical-input */
+      width: 80px;
+      height: 320px;
+    /*  background-color: lightblue;
+      margin-right: 10px;
+      margin-left: 10px; */
+      border: 1px solid #ccc;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+    }
     .container {
+      z-index: 8;
       display: flex;
       flex-direction: row;
     }
 
+    .grid-item {
+      position: relative;
+      width: 136px;
+      height: 136px;
+      border: 2px solid black;
+      display: none;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+      padding: 10px;
+    /*  cursor: pointer;  Add cursor: pointer to show the card is clickable */
+      margin-left: 12px; /* 12/8/23 ADDED AS CARDS WERE STRANGELY TOUCHING LEFT EDGE OF CONTAINER */
+    }
+    
     .grid-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -17,46 +176,79 @@
       height: 320px;
       border: 1px solid black;
       background-color: lightgray;
-      float: left;
+     /* float: left; */
+      justify-content: center; /* Center horizontally ADDED 12/8/23 */
+      align-items: center; /* Center vertically ADDED 12/8/23 */
+      
     }
 
-    .grid-item {
+    .OLDsquare-card {
       background-color: white;
       border: 1px solid black;
     }
 
     .rectangle {
       width: 80px;
-      height: 320px;
+      height: 300px;
       background-color: lightblue;
       margin-right: 10px;
+      display: inline-flex; /* BEFORE 12/8/23 was flex */
+      align-items: center; /* Center the input vertically */
+      padding: 10px;
+      
+  justify-content: center;  /* 12/8/23 ADDED (see comment for rectangle-left below) */
+  position: relative;       /* 12/8/23 ADDED */
     }
 
     .rectangle-rotated {
-      width: 320px;
+      width: 300px;
       height: 80px;
       background-color: lightgreen;
-      margin-top: 10px;
-      margin-left: 100px;
+    /*  margin-top: 10px; */
+      margin-left: 10px; /* BEFORE 12/8/23 WAS 100px */
+      display: flex;
+      align-items: center; /* Center the input vertically */
+      padding: 10px;
     }
 
     .rectangle-left {
       width: 80px;
-      height: 320px;
+      height: 300px;
       background-color: lightblue;
-      margin-right: 10px;
+     /* margin-right: 10px; */
       margin-left: 10px;
+      display: flex; /*inline flex needed? */
+      align-items: center; /* Center the input vertically */
+      padding: 10px;
+  justify-content: center;  /* 12/8/23 ADDED (these two additions seem to ensure that the other changes... */
+  position: relative;       /* ...to the input-fields allow vertical orientation in rectangles correctly) */
     }
 
     .rectangle-top {
-      width: 320px;
+      width: 300px;
       height: 80px;
       background-color: lightgreen;
       margin-right: 10px;
-      margin-left: 100px;
+      margin-left: 10px; /* BEFORE 12/8/23 IT WAS 100px */
+      display: flex;
+      justify-content: center; /* Center the content horizontally */
+      align-items: center; /* Center the input vertically */
+      padding: 10px;
     }
 
-    .slot {
+    .slot {position: relative;
+      width: 136px;
+      height: 136px;
+      border: 2px solid black;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+      padding: 10px;
+      cursor: pointer; /* Add cursor: pointer to show the card is clickable */
+    }
+
+    .OLDslot {
       width: 160px;
       height: 160px;
       background-color: white;
@@ -80,7 +272,7 @@
       flex-direction: column;   /* ADDED THIS FOR ROTATE CARD/SLOT BUTTONS */
     }
     .slot-container {
-      display: flex;
+      display: none;
       flex-direction: row;
     }
     /* Styles for the button when it's unpressed */
@@ -91,132 +283,119 @@
 
   /* Styles for the button when it's pressed */
   .pressed {
-    background-color: lightblue;
+    background-color: lemonchiffon; /* BEFORE 12/8/23 WAS lightblue */
     color: red;
   }
+
+  .word {
+  position: absolute;
+  font-size: 16px;
+  font-weight: bold;
+}
+.top-word {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.right-word {
+  top: 50%;
+  margin-right: -115px; /* 17/8/23 was 'right: 0;' */
+  transform: translateY(-50%) rotate(90deg);
+}
+.bottom-word {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%); /* 17/8/23 was additionally rotate(180deg) */
+}
+.left-word {
+  top: 50%;
+  margin-left: -115px;  /* 17/8/23 was 'left: 0;' */
+  transform: translateY(-50%) rotate(-90deg);
+}
   </style>
 </head>
 <body>
   <script src="app.js" type="module"></script>
   <script src="Board.js" type="module"></script>
-  <script>
-    
-    function toggleButton(pressedButton) {
-      const button = document.getElementById(pressedButton);
-      if (button.textContent) {
-        return toggleButton2(pressedButton);
-      }
-    }
-    let currentPressedButtonId = null;  // the buttonId of button that is currently pressed (null means no button pressed)
-    let secondPressedButtonId = null;
-    function toggleButton2(buttonId) {
-      const button = document.getElementById(buttonId); // button id of toggled button in html body (what you are pressing now)
-    /*  if (button === currentPressedButtonId) {    // if button id of toggled is same as id of button currently pressed
-        console.log('poopywoopy');
-        currentPressedButtonId = secondPressedButtonId;  // denotes oldest button pressed is now the secondButton (which was newest)
-        secondPressedButtonId = null;     //only one button is pressed now
-        button.classList.remove('pressed'); // Remove the pressed class from this buttonId
-        button.classList.add('unpressed'); // Add the unpressed class to this buttonId  */
-        if (button === currentPressedButtonId) {    // 26/7/23 -AMENDED THIS FIRST IF STATEMENT THE DELETIONS ABOVE:
-        currentPressedButtonId = null;              // : SO THAT NO NEED TO CHANGE BETWEEN CURRENT AND SECOND BUTTON.
-        button.classList.remove('pressed'); // Remove the pressed class from this buttonId
-        button.classList.add('unpressed');
-        } else if (button === secondPressedButtonId) {
-          secondPressedButtonId = null;
-          button.classList.remove('pressed');
-          button.classList.add('unpressed');
-          } else if (currentPressedButtonId === null && secondPressedButtonId === null) {
-            console.log('luupy');
-            currentPressedButtonId = button;
-            button.classList.remove('unpressed');
-            button.classList.add('pressed');
-            } else if (button !== currentPressedButtonId && secondPressedButtonId === null) {
-              console.log('this should work');
-              secondPressedButtonId = button;
-              button.classList.remove('unpressed');
-              button.classList.add('pressed');
-              } else if (button !== secondPressedButtonId && currentPressedButtonId === null) {
-              console.log('this should work22222');       //ADDED THIS 28/7/23
-              currentPressedButtonId = button;
-              button.classList.remove('unpressed');
-              button.classList.add('pressed');
-              } else {
-                console.log('tyiirp');
-                //boards[0].addCardToBoard(boards[0].cards,parseInt(currentPressedButtonId),boards[0].cards,parseInt(button));
-                currentPressedButtonId.classList.remove('pressed');
-                currentPressedButtonId.classList.add('unpressed');
-                secondPressedButtonId.classList.remove('pressed');  // 26/7/23 -ADDED THIS SO IF TWO BUTTONS ALREADY PRESSED:
-                secondPressedButtonId.classList.add('unpressed');   // :THEN NEW BUTTON IS ONLY PRESSED (OTHERS UNPRESS)
-                button.classList.remove('unpressed');
-                button.classList.add('pressed');
-                //currentPressedButtonId = secondPressedButtonId;
-                //secondPressedButtonId = button;
-                currentPressedButtonId = button;      // 26/723 -NEWLY ADDED THESE TWO LINES SO THAT CURRENT IS JUST PRESSED BUTTON:
-                secondPressedButtonId = null;         // :AND NO OTHER BUTTON PRESSED.
-      //  updateBoard2();
-      }
-    }
-    </script>
-
-  <div class="rectangle-top"></div>
   <div class="container">
-    <div class="rectangle-left"></div>
+  <div><button class="rotate-board-button" id="boardAnticlockwiseButton"></button></div>
+  <div class="rectangle-top" id="rectangleTop"> <!--17/8/23 added id for all rectangles, so can getElementbyId for each, and clueCards = [array of rectangle elements]-->
+    <input type="text" class="input-field user-clue" id="inputFieldTop" disabled> <!--17/8/23 removed placeholder="Write clue etc"-->
+  </div>
+  <div><button class="rotate-board-button" id="boardClockwiseButton"></button></div>
+  </div>
+  <div class="container">
+    <div class="rectangle-left" id="rectangleLeft">
+      <input type="text" class="input-field-rotated-anticlockwise user-clue" id="inputFieldLeft" disabled>
+    </div>
     <div id="grid" class="grid-container">
-      <div>
-        <button id="card1" class="grid-item unpressed" onclick="toggleButton('card1')"></button>
-      </div>
-      <div>
-        <button id="card2" class="grid-item unpressed" onclick="toggleButton('card2')"></button>
-      </div>
-      <div>
-        <button id="card3" class="grid-item unpressed" onclick="toggleButton('card3')"></button>
-      </div>
-      <div>
-        <button id="card4" class="grid-item unpressed" onclick="toggleButton('card4')"></button>
-      </div>
+      <button id="card1" class="grid-item unpressed cardslot" onclick="toggleButton('card1')" disabled></button>
+      <button id="card2" class="grid-item unpressed cardslot" onclick="toggleButton('card2')" disabled></button>
+      <button id="card3" class="grid-item unpressed cardslot" onclick="toggleButton('card3')" disabled></button>
+      <button id="card4" class="grid-item unpressed cardslot" onclick="toggleButton('card4')" disabled></button>
     </div>
-    <div class="rectangle"></div>
+    <div class="rectangle" id="rectangle">
+      <input type="text" class="input-field-rotated-clockwise user-clue" id="inputFieldRight" disabled>
+    </div>
+    <!-- 12/8/23 THIS IS TEST FOR INPUT TEXT ON VERTICAL RECTANGLES, STILL NOT RIGHT, WORDS NOT 22 LETTERS
+    <div class="rectangle-left2">
+      <input type="text" class="vertical-input" placeholder="Enter text vertically">
+    </div>  -->
     <div class="column-container"> 
-    <div><button id="card0ClockwiseButton">Rotate card0 clockwise</button></div>
+      <div class="summary-box" id="summaryBox">Welcome to <b>So Clover!</b><p>This cooperative game requires at least two players.
+        <br>You, the clue-giver (henceforth <b>Player One</b>) and the guessers (henceforth Players Two).
+        <p> It is your turn, <b>Player One</b>.
+        <br>Ensure that Players Two is unable to see your screen before proceeding."
+        <div class="container">
+         <button class="proceed-button" id="proceedButton">Proceed</button>
+          <button class="return-button" id="returnButton">Return to board</button>
+        </div>
+      </div>
     </div>
-    <div class="column-container">
-    <div><button id="card0AnticlockwiseButton">Rotate card0 Anticlockwise</button></div>
-    <div><button id="swapSlot0Card0Button">swap card0 slot0</button></div>
-    <div><button id="seeOriginalCardsButton">see original cards</button></div>
     
-    <div><button id="swapSlotsButton">Swap slots</button></div>
-    <div><button id="swapCardsButton">Swap cards</button></div>
-    <div><button id="swapSwapButton">Swap swap</button></div> <!-- 27/7/23 ACTUALLY doing the card/slot swap, any swap valid -->
-    </div>
     </div>
   </div>
-  <div class="rectangle-rotated"></div>
+  <div class="container">
+    <div><button class="rotate-card-button" id="cardAnticlockwiseButton"></button></div>
+  <div class="rectangle-rotated" id="rectangleRotated">
+    <input type="text" class="input-field user-clue" id="inputFieldBottom" disabled>
+  </div>
+  <div><button class="rotate-card-button" id="cardClockwiseButton"></button></div>
+  </div>
   <div class="container">
     <!-- Updated slots with card containers -->
     <div id="row-slots" class="slot-container">
     <div>
-      <button id="slot1" class="slot unpressed" onclick="toggleButton('slot1')"></button>
+      <button id="slot1" class="slot unpressed cardslot" onclick="toggleButton('slot1')"></button>
     </div>
     <div>
-      <button id="slot2" class="slot unpressed" onclick="toggleButton('slot2')"></button>
+      <button id="slot2" class="slot unpressed cardslot" onclick="toggleButton('slot2')"></button>
     </div>
     <div>
-      <button id="slot3" class="slot unpressed" onclick="toggleButton('slot3')"></button>
+      <button id="slot3" class="slot unpressed cardslot" onclick="toggleButton('slot3')"></button>
     </div>
     <div>
-      <button id="slot4" class="slot unpressed" onclick="toggleButton('slot4')"></button>
+      <button id="slot4" class="slot unpressed cardslot" onclick="toggleButton('slot4')"></button>
     </div>
     <div>
-      <button id="slot5" class="slot unpressed" onclick="toggleButton('slot5')"></button>
+      <button id="slot5" class="slot unpressed cardslot" onclick="toggleButton('slot5')"></button>
     </div>
     <div>
-      <button id="slot6" class="slot unpressed" onclick="toggleButton('slot6')"></button>
+      <button id="slot6" class="slot unpressed cardslot" onclick="toggleButton('slot6')"></button>
     </div>
     </div>
   </div>
-  <div><button id="boardAnticlockwiseButton">Rotate board anti-clockwise</button></div>
-  <div><button id="boardClockwiseButton">Rotate board clockwise</button></div>
-  <div><button id="startGameButton">Start game</button></div>
-  
+<!--  <div><button id="startGameButton">Player One: Start</button></div> -->
+  <div><button id="submitCluesButton" style="display: none">Submit Clues</button></div>
+  <div><button id="submitGuessButton" style="display: none">Submit guess</button></div>
+  <div><button id="newGameButton" style="display: none">New game</button></div>
+  <div><button id="seeOriginalCardsButton" style="display: none">see original cards</button></div>
+  <div class="text-box" id="textBox">
+    
+  </div>
 </body>
 </html>
+
+
+
+    

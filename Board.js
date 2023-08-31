@@ -1,6 +1,7 @@
-import {updateBoard2} from './app.js'; // import flatten from "lodash/flatten.js";
+import {_wordlist, updateBoard2} from './app.js'; // import flatten from "lodash/flatten.js";
 import {Card} from './Card.js';
-
+import {soCloverWords} from './app.js';
+import { difficulty } from './app.js'; // 31/8/23
 export class Board {
         constructor(wordlist) {
         this.cards = this.generateCards(wordlist); // ORIGINALLY ITS AN ARRAY [...this.generateCards(wordlist)]
@@ -48,7 +49,7 @@ this.slots = [];
 //ploopy[i] = new Card(wordlist);
 //console.log(this.cards);
           }
-        for (let i = 0 ; i < 6; i++) {
+        for (let i = 0 ; i < 4 + difficulty; i++) { // 31/8/23 WAS just i < 6
             this.slots[i] = null;               //ADDED THIS TO CREATE SLOTS, ASK DAN WHY.. (see this.slots in Board class above)
         console.log(this.slots);
     }
@@ -70,27 +71,62 @@ return this.cards;
         }
 
         //only need to check first word of each _words:
-        removeIncorrectCards() {
-         if (this.cards.some( _ => _ === null )) {
-          return console.log('You foolish person, you need to fill all the spaces on the board with a card before submitting your guess!');} else {
+        removeIncorrectCards() { console.log('WHERE AM I HAHAH');
+const currentBoardOrientation = this.orientation % 4; // 7/8/23 NEED THIS FOR LATER ON IN THIS FUNCTION
+// 17/8/23 removed these two lines: if (this.cards.some( _ => _ === null )) {
+// return console.log('You foolish person, you need to fill all the spaces on the board with a card before submitting your guess!');} else {
             this.cards.forEach( _ => _.orientation2 = _.orientation2 % this.cards.length);
-         for ( let i=0; i < this.cards.length; i++)  {
-          if (this.cards[i]._words[0] !== this.originalCards[i]._words[0] )  {
-          this.addCardToBoard(this.cards, i, this.slots, i) };
+this.slots.forEach((element, index, arr) => {
+if (element !== null && index !== this.cards.length + difficulty - 1) {  // 6/8/23 SENDS CARD NOT PUT ON BOARD TO END OF SLOTS
+    arr[this.cards.length + difficulty - 1] = element;                     // 8/8/23 NOW REMOVED THIS forEach (see below)
+    console.log(arr[this.cards.length + difficulty - 1]);     // 31/8/23 These 7 lines from this.slots.forEach onwards now reinstated, with 'difficulty' instead '5'.
+    arr[index] = null;
+  }
+});
+      //      this.slots.map( (_, index, arr) => { 
+       //       if (_ !== null && index !== this.slots.length - 1) {
+       //         arr[this.slots.length - 1] = _;
+      //          arr[index] = null; console.log(arr[index]);} else {    // 6/8/23 NOW HAVE FIXED this.slots.map, CARD NOT USED IN GUESS TO GO TO END OF SLOT
+      //          return _;                     // BUT SHOULD CONSIDER NOT USING .MAP AS CREATES NEW ARRAY BUT I ONLY WANT TO CHANGE ELEMENTS
+      //          }
+      //        })
+       //       console.log(this.slots);
+       this.reset;    // 6/8/23 NEEDED THIS TO RESET BOARD BEFORE CHECKING CARDS
+         for ( let i=0; i < this.cards.length; i++)  { console.log('QOOOBOOO');
+          if (this.cards[i].words[0] !== this.originalCards[i]._words[0] )  { // 5/8/23 CHANGED _words to .words in this.cards[i] now working as intended (essentially checking the orientation of the card as well)
+            this.cards[i].orientation2 += currentBoardOrientation;
+            this.addCardToBoard(this.cards, i, this.slots, i);
+          if (this.cards[i] !== null) {     //8/8/23 ADDED if STATEMENT TO REMOVE forEach ABOVE (extra card only sent to end of slots if it replaced a card from board)
+            this.addCardToBoard(this.cards, i, this.slots, 5);
+          } } ;
          }
-        }
+for (let i=currentBoardOrientation ; i > 0 ; i--) { this.boardAnticlockwise() };
+// 7/8/23 for LOOP ABOVE GETS THE ORIENTATION SAME AS BEFORE RESET. NEED THIS AS BOARD NOT UPDATED AFTER GUESS SUBMITTED, BUT CARDS ARE RESET.
+// 17/8/23 removed the 'You're foolish statement for not submitting all cards        }
+console.log(this.slots);
         }
 
-        // this pushes (up to) six null at the end of slots to initalise the slots. Then as long as there are cards on the board, they will be placed in a random slot. This function is only done once as part of the card initialisation.
+        // this pushes (up to) six null at the end of slots to initalise the slots (NOT ANYMORE 5/8/23, see below). Then as long as there are cards on the board, they will be placed in a random slot. This function is only done once as part of the card initialisation.
         randomise() {
-        let usedSlotIndex = [];
-        let difficulty = 2;
-        for (let i=0; i < this.cards.length + difficulty; i++) {
-          this.slots.push(null);
-          };
+        this.cards.forEach( element => {
+           
+            element.orientation2 = Math.floor(Math.random()*this.cards.length);
+          
+          });
+
+        let usedSlotIndex = [];
+//        let difficulty = 1; 31/8/23 WAS = 2 for two extra slots (now difficulty is exported from app.js)
+//      for (let i=0; i < this.cards.length + difficulty; i++) {    // 5/8/23 DONT NEED THIS ANYMORE IF I 
+//        this.slots.push(null);                                    //ALREADY HAVE SLOTS ON BOARD AT START
+//        };
         const extraCardPosition = Math.floor(Math.random() * (this.cards.length + difficulty));
-        const extraCard = new Card(arrayOfWords);
-        this.slots.splice(extraCardPosition, 1, extraCard);
+        let extraCard = new Card(soCloverWords);
+  console.log(extraCard);
+        while (this.clues.some( clue => extraCard._words.some( word => clue.toLowerCase() === word.toLowerCase() ) )) {
+          extraCard = new Card(soCloverWords);
+        }  // 7/8/23 NOW CANNOT HAVE CLUE WORDS IN EXTRA CARD WITH THIS while LOOP (GETS NEW CARD ALONG THE WORDLIST)
+   console.log(extraCard);
+        this.slots.splice(extraCardPosition, 1, extraCard);
         usedSlotIndex.push(extraCardPosition);
         while (this.cards.some( _ => _ !== null)) {
           for (let i = 0; i < this.cards.length; i++) {
