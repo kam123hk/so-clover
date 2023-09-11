@@ -1,6 +1,6 @@
 import {_wordlist, updateBoard2} from './app.js'; // import flatten from "lodash/flatten.js";
 import {Card} from './Card.js';
-import {soCloverWords} from './app.js';
+import {soCloverWords} from './app.js'; import {duetWords} from './app.js'; import {undercoverWords} from './app.js'; import {codenamesWords} from './app.js'; // 5/9/23 newly imported words from codenames x3
 import { difficulty } from './app.js'; // 31/8/23
 export class Board {
         constructor(wordlist) {
@@ -21,8 +21,8 @@ export class Board {
     button.classList.remove('pressed'); // Remove the pressed class from this buttonId
     button.classList.add('unpressed'); // Add the unpressed class to this buttonId
   } else if (currentPressedButtonId === null) {
-    console.log('luupy');
     currentPressedButtonId = button;
+    console.log('luupy');
     button.classList.remove('unpressed');
     button.classList.add('pressed');
   } else {
@@ -92,12 +92,12 @@ if (element !== null && index !== this.cards.length + difficulty - 1) {  // 6/8/
       //        })
        //       console.log(this.slots);
        this.reset;    // 6/8/23 NEEDED THIS TO RESET BOARD BEFORE CHECKING CARDS
-         for ( let i=0; i < this.cards.length; i++)  { console.log('QOOOBOOO');
+         for ( let i=0; i < this.cards.length; i++)  { console.log('ROOOOOOOOOOOB');
           if (this.cards[i].words[0] !== this.originalCards[i]._words[0] )  { // 5/8/23 CHANGED _words to .words in this.cards[i] now working as intended (essentially checking the orientation of the card as well)
             this.cards[i].orientation2 += currentBoardOrientation;
-            this.addCardToBoard(this.cards, i, this.slots, i);
+            this.addCardToBoard(this.cards, i, this.slots, (i+4-currentBoardOrientation)%4); // 5/9/23 NOW cards are send to the ith slot no matter the board orientation
           if (this.cards[i] !== null) {     //8/8/23 ADDED if STATEMENT TO REMOVE forEach ABOVE (extra card only sent to end of slots if it replaced a card from board)
-            this.addCardToBoard(this.cards, i, this.slots, 5);
+            this.addCardToBoard(this.cards, i, this.slots, 5); // 5/9/23 ACTUALLY this if is redundent now, as spare card always sent to end
           } } ;
          }
 for (let i=currentBoardOrientation ; i > 0 ; i--) { this.boardAnticlockwise() };
