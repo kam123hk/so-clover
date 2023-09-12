@@ -22,11 +22,11 @@ const clover3 = ['hero', 'emergency', 'metal', 'lighthouse', 'father', 'internet
 const clover2 = ['month', 'stroke', 'cabbage', 'stunt', 'rain', 'asset', 'race', 'closet', 'family', 'flame', 'sleeve', 'architecture', 'elastic', 'triangle', 'weather', 'order', 'furniture', 'comforter', 'brown', 'covered', 'princess', 'cactus', 'bulb', 'cake', 'duck', 'trim', 'barracks', 'kiss', 'cemetery', 'bracelet', 'deep', 'region', 'blade', 'peace', 'bowl', 'mouth', 'sock', 'door', 'cow', 'circle', 'plush', 'archaeology', 'cork', 'distributor', 'stock', 'crane', 'district', 'lazy', 'shop', 'file', 'magnet', 'tennis', 'nest', 'bubble', 'poetry', 'sweet', 'antiquity', 'exit', 'plant', 'candle', 'limit', 'pirate', 'intersection', 'instrument', 'volcano', 'root', 'screen', 'beast', 'face', 'butterfly', 'road', 'cocktail', 'quit', 'soap', 'full', 'branch', 'business', 'dish', 'myth', 'big', 'pigeon', 'robot', 'america', 'wand', 'hammer', 'drawing', 'bin', 'forbidden', 'charm', 'tame', 'flour', 'sail', 'diamond', 'book', 'soft', 'poison', 'cockroach', 'landscape', 'champagne', 'switzerland', 'cookie', 'craft', 'shell', 'flea', 'right', 'forest', 'display', 'octopus', 'alliance', 'cabin', 'old', 'tiger', 'pump', 'season', 'card', 'porcelain', 'bench', 'patron', 'stud', 'camera', 'end', 'commerce', 'trophy', 'shovel', 'grease', 'wish', 'buckle', 'sword', 'thief', 'theatre', 'smell', 'oar', 'blue', 'tunnel', 'dress', 'vision', 'office', 'pair', 'protect', 'chocolate', 'slide', 'snail', 'dynamite', 'pliers', 'ray', 'boot', 'rat', 'gate', 'punch', 'soup', 'game', 'canvas', 'plastic', 'detergent', 'castle', 'frost', 'bird', 'treasure', 'nurse', 'sticky', 'cushion', 'necklace', 'oil', 'vampire', 'food', 'gift', 'library', 'bomb', 'day', 'shield', 'inspection', 'history', 'ear', 'cavern', 'shark', 'feed', 'major', 'dead', 'radar', 'reptile', 'wine', 'boat', 'iron', 'whirlwind', 'drum', 'fire', 'sister', 'hotel', 'banana', 'tattoo', 'doe', 'clothing', 'perfume', 'chariot', 'limb', 'napkin', 'bank', 'lava', 'dessert', 'god', 'hand', 'river', 'radio', 'crow', 'roast', 'essence', 'joke', 'hospital', 'mint', 'recent', 'layer', 'devil', 'revolution', 'fry', 'ruler', 'mail', 'shape', 'ground', 'asia', 'glove'];
 const clover1 = ['witness', 'sausage', 'hardware', 'ticket', 'table', 'mushroom', 'truck', 'church', 'mirage', 'airport', 'sport', 'currency', 'ship', 'apple', 'common', 'exhibition', 'cantina', 'lightning', 'phone', 'music', 'handicap', 'lion', 'rich', 'star', 'honey', 'desert', 'paper', 'virus', 'diet', 'explosion', 'top', 'show', 'heavy', 'tea', 'room', 'life', 'powder', 'labyrinth', 'party', 'assassin', 'fault', 'france', 'physical', 'rabbit', 'jewel', 'summit', 'bug', 'genius', 'summer', 'species', 'temple', 'suit', 'illness', 'column', 'cloud', 'cheese', 'beer', 'marker', 'technology', 'edge', 'heel', 'revenge', 'watch', 'motor', 'europe', 'repair', 'victory', 'dragon', 'painting', 'speaker', 'ladybug', 'restaurant', 'bag', 'thin', 'rice', 'balcony', 'glasses', 'syrup', 'king', 'place', 'tongue', 'wizard', 'attraction', 'rake', 'mobile', 'oak', 'raft', 'suspect', 'beach', 'morning', 'head', 'device', 'egg', 'nail', 'newspaper', 'bus', 'hobbies', 'series', 'glass', 'turn', 'skull', 'award', 'fly', 'calendar', 'large', 'pine', 'spicy', 'hat', 'brush', 'travel', 'flower', 'fishing', 'pepper', 'fast', 'light', 'case', 'stage', 'hearing', 'ladle', 'hearth', 'fuel', 'luck', 'roll', 'hook', 'chair', 'beef', 'doctor', 'mark', 'mirror', 'ballroom', 'hen', 'bike', 'memory', 'down', 'guide', 'love', 'snow', 'scissors', 'palace', 'wing', 'ocean', 'camouflage', 'salad', 'young', 'window', 'uniform', 'whip', 'human', 'tradition', 'bronze', 'sabre', 'broom', 'strong', 'knife', 'caterpillar', 'bar', 'song', 'station', 'throat', 'delivery', 'sight', 'base', 'subway', 'baby', 'clean', 'story', 'jar', 'chimney','tornado', 'spider', 'shelf', 'transport', 'china', 'belt', 'bark', 'wind', 'carton', 'snake', 'belgium', 'sharp', 'line', 'red', 'adventure', 'umbrella', 'mass', 'photo', 'orchid', 'performance', 'climbing', 'pond', 'sheep', 'firefighter', 'colour', 'rifle', 'post', 'boss', 'siren', 'apron', 'cube', 'degree' ,'sun', 'concert', 'cable', 'basement', 'passion', 'field', 'crab', 'flute', 'grenade', 'mud', 'claw', 'trash', 'thermometer', 'guitar', 'lock', 'schedule', 'envelop', 'turnip', 'brother', 'grate'];
 const clover = [...clover1, ...clover2, ...clover3, ...clover4];
-console.log('clover:', clover.length);
-console.log('clover4:', clover4.length);
-console.log('clover3:', clover3.length);
-console.log('clover2:', clover2.length);
-console.log('clover:', clover1.length);
+
+
+
+
+
 const _wordlistClover = new Wordlist(clover);
 export let soCloverWords = _wordlistClover.gameWords;  // 5/9/23 was a const, but ive reassigned soCloverWords as the generic wordlist for the game?
 export const _wordlist = ['apple', 'block', 'carrot', 'duck', 'egret', 'fruit', 'good', 'hi','igloo','jog','kick','llama','manners','norse','ogle','poop','quick','rabbit','spout','tarot','ugly','vouch','wombat','xenophobe','yippee','zoo','a poo','be calm','cut off','dry it','egg him','for me','get at','hats off','i like','jack ass','kick out', 'lucky git', 'my food', 'nice play', 'on mars', 'pee wee', 'quota full', 'rise up', 'shit storm', 'too foolish', 'under over', 'volcano erupts', 'wee wee','x rated', 'your mum', 'zany bastard'];
@@ -70,14 +70,14 @@ export { updateBoard }; */
 
 let boards = generateBoards(soCloverWords); // Your implementation for generating boards 17/8/23 now 'let' before 'const', as need new board for new game
   //boards[0].getCardsOnBoardPosition;
-  console.log('now lers see') ;
-  console.log(boards[0].slots);
-  console.log(boards[0]);
+  
+  
+
   //boards[0].boardClockwise();
   // boards[0].cardAnticlockwise(0);
   const gridElement = document.getElementById('grid');
-console.log(gridElement);
-  console.log('ypooppoo');
+
+  
  // gridElement.innerHTML = '';
  //updateBoard();
 const unpressedCardslotsOnBoard = Array.from(document.getElementsByClassName('grid-item unpressed'));
@@ -98,16 +98,16 @@ function getStyleFromElements(elementsArray) {
 // Get the rotate button element
 const boardAnticlockwiseButton = document.getElementById('boardAnticlockwiseButton');
 const boardClockwiseButton = document.getElementById('boardClockwiseButton');
-console.log('test colour change');
+
 // Add a click event listener to the button
 boardAnticlockwiseButton.addEventListener('click', () => {
   getCluesFromBoard();      // 7/8/23 USER MAY ADD/AMEND CLUES. THIS TRANSFERS THEM TO boards[].clues
   boards[0].boardAnticlockwise();
   const clueStyles = getStyleFromElements(clueCards);
   const clueColors1 = ['lightgreen', 'lightblue', 'lightgreen', 'lightblue'];
-  console.log(clueStyles);
+  
   if (clueStyles[0].backgroundColor === 'rgb(144, 238, 144)') {
-    console.log('change colour test');
+    
     
     //const clueColors2 = clueColors1.map( _ => _ );
     clueCards.forEach( (rectangle, index) =>  rectangle.style.backgroundColor = clueColors1[(index +1)%4]); // 17/8/23 was rectangle[0].style (see previous comment about clueCards)
@@ -127,9 +127,9 @@ boardClockwiseButton.addEventListener('click', () => {
   boards[0].boardClockwise();
   const clueStyles = getStyleFromElements(clueCards);
   const clueColors1 = ['lightgreen', 'lightblue', 'lightgreen', 'lightblue'];
-  console.log(clueStyles);
+  
   if (clueStyles[0].backgroundColor === 'rgb(144, 238, 144)') {
-    console.log('change colour test');
+    
     
     //const clueColors2 = clueColors1.map( _ => _ );
     clueCards.forEach( (rectangle, index) =>  rectangle.style.backgroundColor = clueColors1[(index +1)%4]);
@@ -141,9 +141,9 @@ boardClockwiseButton.addEventListener('click', () => {
   unpressCards();
   updateCluesOnBoard();   // 7/8/23 SHOWS CLUES IN CORRECT POSITION AFTER ROTATION
   enableAllCardslots();   // 10/8/23 ENABLES ALL CARDSLOTS ON BOARD
-  console.log('should be enabled NOW2');
+  
   rotateDisabledClockwise();  // 10/8/23 ROTATES pressedCardIndices array THEN DISABLES these ROTATED (correct) CARDS
- console.log(boards[0].clues); highlightCorrectCards(); forbidGuess(); // 1/9/23 these two functions
+ highlightCorrectCards(); forbidGuess(); // 1/9/23 these two functions
 });
 
 
@@ -159,7 +159,7 @@ cardClockwiseButton.addEventListener('click', () => {
  // console.log(button[0].id);
 
   if (button.length > 0) {
-    console.log(button.length);
+    
     let buttonPosition = button[0].id.replace(/\D/g, "");
     if (button[0].id.includes('card')) {
       boards[0].cardClockwise(buttonPosition -1);
@@ -192,14 +192,14 @@ cardAnticlockwiseButton.addEventListener('click', () => {
   //updateBoard2();
   //updateSlots();
   updateCardsOnBoard();
-  updateSlotsOnBoard(); console.log('MRBLOB'); checkFullGrid(); forbidGuess(); // 10/9/23 these last two functions essentially give conditions on when submitGuessButton shows
+  updateSlotsOnBoard(); checkFullGrid(); forbidGuess(); // 10/9/23 these last two functions essentially give conditions on when submitGuessButton shows
   }
 });
 const submitCluesButton = document.getElementById('submitCluesButton');
 const summaryBox = document.getElementById("summaryBox"); // 17/8/23
 const proceedButton = document.getElementById("proceedButton");
 proceedButton.addEventListener('click', () => {
-createGame(...selectWordlist()); wordlistButtons.forEach(button => {button.setAttribute('disabled', 'disabled'); button.style.cursor = "auto"; console.log('diasbaled!')}); // 11/9/23 function to create entire wordlist for the game from the available, then disable the wordlist button(s).
+createGame(...selectWordlist()); wordlistButtons.forEach(button => {button.setAttribute('disabled', 'disabled'); button.style.cursor = "auto"; }); // 11/9/23 function to create entire wordlist for the game from the available, then disable the wordlist button(s).
 // updateBoard2();
 userClues.forEach( clue => clue.value = "");    // 17/8/23 these two lines remove text but place placeholder (dont actually need this first one, as clues will be written by user)
 userClues.forEach( clue => clue.setAttribute("placeholder", "Write your clue here"));
@@ -210,7 +210,7 @@ summaryBox.innerHTML = "<b>Clue-giving phase:</b>\
 <p>The clue must be one word with no numbers or special characters. It should not be in the same word family as any word on a card.\
 <p>Once all four clues around the board are written, submit them and pass the controls over to your <i>team</i>."
 proceedButton.style.display = "none";               // 24/8/23 changed from startGameButton.remove();
-console.log('why not working2')
+
 boardAnticlockwiseButton.style.display = "block";
 boardAnticlockwiseButton.style.cursor = "pointer";  // 12/8/23 ADDED pointer AND textContent to highlight button only AFTER GameStart
 boardAnticlockwiseButton.textContent = "Rotate board Anti-clockwise";
@@ -221,10 +221,10 @@ boardClockwiseButton.textContent = "Rotate board Clockwise";
 boardClockwiseButton.style.backgroundColor = 'rgb(164, 221, 195)';
 // submitCluesButton.style.display = "block";     // 24/8/23
 // clueCards.forEach( rectangle => rectangle[0].style.display = "flex");
-console.log(gridCards);
+
 gridCards.forEach( cardslot => cardslot.style.display = "flex");
 userClues.forEach( clue => clue.removeAttribute('disabled'));
-console.log('poopylopp2');
+
 toggleButton('card1');  // ADDED THESE 4 lines 5/8/23 TO SIMULATE ONE SWAP (and back again)
 toggleButton('card2');  // THIS WAS BECAUSE MY CODE ALWAYS SWAPS card3 when card4 is pressed
 toggleButton('card2');  // BUT AFTER ONE SWAP, THE CODE WORKS, SO I NEEDED TO SIMULATE ONE SWAP!!!
@@ -295,24 +295,24 @@ THESE LINES WERE FOR TRYING TO GET WORDS AROUND OUTSIDE OF CARDS 2x2 GRID . ALSO
 
     const cardContainers = Array.from(document.getElementsByClassName('grid-item'));
     const customOrder = [0,1,3,2];
-    console.log('customOrder:', customOrder);
-    console.log('cardContainers length:', cardContainers.length);
+    
+    
 
  //   const cardContainers2 = Array.from(document.getElementsByClassName('grid-item'));
  //   const cardContainers3 = cardContainers2.map( _ => { if (indexOf(_) === 0 || indexOf(_) === 1) {return _} else if
  //   (indexOf(_) === 2) {return cardContainers2[3]} else {return cardContainers2[2]}});
     function updateBoard2() {   //THIS IS NOT LEGACY, DO NOT DELETE!!
-      console.log('poopoopop');
+      
      const gridElement = document.getElementById('grid');
-     console.log(gridElement);
-console.log(gridElement.innerHTML);
+     
+     
  //     const gridItems = gridElement.getElementsByClassName('grid-item');
  //     const gridArray = Array.from(gridItems);
       // Clear existing content in the grid
       gridElement.innerHTML = '';
-      console.log('cleared gridElement');
-console.log(gridElement);
-      console.log(gridElement.innerHTML);
+      
+      
+
       // console.log(gridElement);
       // Iterate over each board and card
       boards.forEach((board) => { customOrder.forEach( index => {let cardContainer2; cardContainer2 = cardContainers[index];
@@ -347,13 +347,13 @@ const card6 = new Card(words6);
 
 boards[0].slots = [null,card2,card3,card4,card5,card6];
 */
-console.log('popop');
-console.log(boards[0].slots);
+
+
 
 const slotsContainers = Array.from(document.getElementsByClassName('slot'));
 
 function updateSlots() {  //THIS IS NOT LEGACY DO NOT DELETE!!
-  console.log('foottu');
+  
  const slotsElement = document.getElementById('row-slots');
 
   slotsElement.innerHTML = '';
@@ -377,38 +377,38 @@ export {updateSlots};
 updateSlots();   //DELETE THIS????
 
 let buttonsy = ['S1', 'S2'];
-console.log(buttonsy[0].replace(/\D/g, ""));
+
 
 
 
 
 
 function swapCards(otherButton) {
-console.log('SCREW YOU2');
 
-console.log(document.getElementsByClassName('pressed'));
+
+
 const cardButtons = [document.getElementsByClassName('pressed')[0], otherButton];
-console.log(cardButtons);
+
 const cardButtonNames = cardButtons.map(button => button.id);
-console.log(cardButtonNames);
-console.log(cardButtonNames[0].replace(/\D/g, "")); //replace letters with blank ie remove letters?
+
+
   let firstCard;
   let secondCard;
   if (cardButtonNames[0].includes('card') && cardButtonNames[1].includes('card')) {
-    console.log('card card2');
+    
     firstCard = boards[0].cards;
     secondCard = boards[0].cards;
   } else if (cardButtonNames[0].includes('card') && cardButtonNames[1].includes('slot')) {
-    console.log('card slot2');
+    
     
       firstCard = boards[0].cards;
       secondCard = boards[0].slots;
     } else if (cardButtonNames[0].includes('slot') && cardButtonNames[1].includes('card')) {
-      console.log('slot card2');
+      
       firstCard = boards[0].slots;
       secondCard = boards[0].cards;
     } else {
-      console.log('slot slot2');
+      
       firstCard = boards[0].slots;
       secondCard = boards[0].slots;
     }
@@ -427,9 +427,9 @@ console.log(cardButtonNames[0].replace(/\D/g, "")); //replace letters with blank
  // unpressCards(); 12/8/23 REMOVED NOT NEEDED?
  
  // unpressSlots();
-  console.log(currentPressedButtonId);
-  console.log('should unpress button after swap');
-  console.log(currentPressedButtonId);
+  
+ 
+
 };
 
 //<script> THIS toggleButton BELOW CHECKS IF A CARD IS CLICKED (ie it has text). IF SO , IT THEN GOES TO toggleButton2 (CURRENTLY toggleButton below it)
@@ -445,7 +445,7 @@ let currentPressedButtonId = null;  // the buttonId of button that is currently 
     // let secondPressedButtonId = null;
     window.toggleButton = function(buttonId) {  // 29/3/23 NOW THIS FUNCTION IS IN GLOBAL SCOPE WITH THE window. METHOD.
       const button = document.getElementById(buttonId); // button id of toggled button in html body (what you are pressing now)
-      console.log(button);
+      
     /*  if (button === currentPressedButtonId) {    // if button id of toggled is same as id of button currently pressed
         console.log('poopywoopy');
         currentPressedButtonId = secondPressedButtonId;  // denotes oldest button pressed is now the secondButton (which was newest)
@@ -453,14 +453,14 @@ let currentPressedButtonId = null;  // the buttonId of button that is currently 
         button.classList.remove('pressed'); // Remove the pressed class from this buttonId
         button.classList.add('unpressed'); // Add the unpressed class to this buttonId  */
         if (currentPressedButtonId === null && button.textContent) {
-          console.log('press button');
+          
           currentPressedButtonId = button;
           button.classList.remove('unpressed');
           button.classList.add('pressed');
           highlightButtons(); // 12/8/23 ADDED this function to HIGHLIGHT option to rotate PRESSED Card
         }
         else if (button === currentPressedButtonId) {    // 26/7/23 -AMENDED THIS FIRST IF STATEMENT THE DELETIONS ABOVE:
-        console.log('remove pressed')
+        
         currentPressedButtonId = null;              // : SO THAT NO NEED TO CHANGE BETWEEN CURRENT AND SECOND BUTTON.
        // button.classList.remove('pressed'); // Remove the pressed class from this buttonId
        // button.classList.add('unpressed');
@@ -469,9 +469,9 @@ let currentPressedButtonId = null;  // the buttonId of button that is currently 
        unpressCards();  // 12/8/23 ADDED two lines, REMOVED 4 lines above (unpress has color change)
        unpressSlots();
           }  else if (button !== currentPressedButtonId && currentPressedButtonId !== null) {
-              console.log('switch cards');       //ADDED THIS 28/7/23
+                     //ADDED THIS 28/7/23
               currentPressedButtonId = button;  // 4/8/23 STILL SEEMS TO WORK IF THIS IS NULL.
-              console.log(currentPressedButtonId); //4/8/23 IN FACT COULD I... (no cos, need pressed className in swapCards function) JUST REMOVE PRESSED AT THE END OF else if HERE?
+               //4/8/23 IN FACT COULD I... (no cos, need pressed className in swapCards function) JUST REMOVE PRESSED AT THE END OF else if HERE?
               //currentPressedButtonId = null; //ADDED 4/8/23 COS DUNNO WHY current = button, MUST BE A REASON RIGHT??
               //button.classList.remove('unpressed');
               //button.classList.add('pressed');
@@ -481,9 +481,9 @@ let currentPressedButtonId = null;  // the buttonId of button that is currently 
               unpressSlots();
               updateCardsOnBoard();
               updateSlotsOnBoard();
-              console.log(currentPressedButtonId); checkFullGrid(); // 10/9/23
-              console.log(document.getElementsByClassName('pressed'));
-              console.log('ARGH WHO KNOWS!!!!'); forbidGuess(); // 5/9/23
+               checkFullGrid(); // 10/9/23
+              
+               forbidGuess(); // 5/9/23
               } 
       //  updateBoard2();
  //BEFORE 4/8/23 HAD updateCardsOnBoard AND updateSlotsOnBoard HERE, BUT MOVED TO AFTER else if ABOVE.
@@ -518,7 +518,7 @@ function unpressSlots() {
 }
 
 const cardslots = Array.from(document.getElementsByClassName('cardslot'));
-console.log(cardslots);
+
 
 
 // Assuming you have an array of words
@@ -536,16 +536,16 @@ function updateCardsOnBoard() {
 
 
 const grid = Array.from(document.getElementsByClassName('grid-item'));
-console.log('poopo5o');
+
 
 
 
 // 5/8/23 see 2 lines below for MOVE OF const AND AMENDMENT:
 boards.forEach( board => {
   const wordsOnCards = board.cards;  // 5/8/23 PREVIOUSLY THIS WAS BEFORE boards.forEach AND = boards[0].cards instead
-  console.log(wordsOnCards);         // 5/8/23 SO IT MEANS I CAN DO THIS FOR MORE THAN ONE BOARD.
+           // 5/8/23 SO IT MEANS I CAN DO THIS FOR MORE THAN ONE BOARD.
   [0,1,3,2].forEach( (index, element) => {if (wordsOnCards[element] !== null) {
-    console.log(element);
+    
 
 // grid.forEach(  (element, index) => 
 //  { console.log(grid[index]);
@@ -599,16 +599,16 @@ function updateSlotsOnBoard() {
    //   [0,1,3,2].forEach( index => {if (board.cards[index] !== null) {
     
   const grid = Array.from(document.getElementsByClassName('slot'));
-  console.log('poro');
+  
   
   
   // 5/8/23 SWAPPED const wordOnCards TO 2 LINES BELOW
   boards.forEach( board => {
     grid.forEach(element => element.innerHTML = ''); // Clear existing content inside the card 6/8/23 MOVED HERE INSTEAD OF WITHIN if STATEMENT OF forEach FUNCTION. SEEMS FINE.
     const wordsOnCards = board.slots;  // 5/8/23 PREVIOUSLY THIS WAS BEFORE boards.forEach AND = boards[0].cards instead
-    console.log(wordsOnCards);
+    
     [0,1,2,3,4].forEach( element => {if (wordsOnCards[element] !== null) { // 31/8/23 NOW only 0,1,2,3,4 for only 5 cardslots
-      console.log(element);
+      
   
   // grid.forEach(  (element, index) => 
   //  { console.log(grid[index]);
@@ -698,7 +698,7 @@ proceedButton.style.display = "block";
 let allWords = [];
 // let difficulty = 0; 31/8/23 REMOVED, was i < boards[0].cards.length + difficulty below, but that is assuming difficulty can be adjusted by Player One to include an extra card in slots before giving clues.
 for (let i=0; i < boards[0].cards.length; i++) { allWords.push(...boards[0].cards[i]._words)};
-console.log(allWords); // ALL THE WORDS ON CARDS IN SINGLE ARRAY
+ // ALL THE WORDS ON CARDS IN SINGLE ARRAY
 if ([...userClues].some(clue => clue.value === "")) {
   textBox.style.display = "flex";
   textBox.textContent = "Give a clue for every pair before submitting!";
@@ -706,7 +706,7 @@ if ([...userClues].some(clue => clue.value === "")) {
 else if ([...userClues].some( clue => { 
   if (!/^[A-Za-z]+$/.test(clue.value)) { invalidClue = clue.value;  return true } // 17/8/23 textbox says one word which is false
 } )) {
-  console.log(invalidClue);
+  
   textBox.style.display = "flex";
   textBox.textContent = `Your clues must only consist of one word, with no special characters or numbers. An example of an invalid clue is "${invalidClue}".`
   console.log('You foolish person! Your clues must consist of only one word, with no special characters or numbers.')}
@@ -721,11 +721,11 @@ else if ([...userClues].some( clue => {
   textBox.style.display = "none";   // 17/8/23 remove the text box if present.
   submitCluesCount++  // 12/8/23 ADDED to provide extra condition for POINTER to show on CARDS
   userClues.forEach( clue => clue.value = clue.value.toUpperCase());
-  console.log(userClues[0].value);
+  
   getCluesFromBoard();  // WITHOUT IT, board.clues not updated to latest. BUT DOES IT MATTER, AS CODE WORKS WITHOUT THIS getCluesFromBoard. I WILL INCLUDE IT.
 // updateCluesOnBoard();
 //  userClueMap(); // 5/9/23 now removed and placed at same time as guessMap, so that the user guess syncs to clue.
-  console.log('clueMap='+clueMap);
+  
   slotCards.forEach( cardslot => cardslot.style.display = "flex");  // DISPLAYS SLOTS, randomise cards + 1
   boards[0].randomise();
   updateCardsOnBoard();
@@ -738,8 +738,8 @@ else if ([...userClues].some( clue => {
   cardClockwiseButton.style.display = "block";
   submitCluesButton.style.display = "none" // 17/8/23 was submitCluesButton.remove() , but this actually removes the element permanently, so would need to appendChild it again if needed. This just removes it from display.
   // submitGuessButton.style.display = "block"; 10/9/23 removed, see checkFullGrid()
-  console.log(userClues);
-  console.log(boards[0].cards);
+  
+
   summaryBox.innerHTML = "<b>Team phase:</b><p>Click on a card to <i>rotate</i> and <i>position</i> it \
   onto the board.<p>Match each clue around the outside with the two words they relate to from the cards.\
   <p>Can you find the exact solution?"; }  //17/8/23
@@ -776,10 +776,10 @@ submitGuessButton.addEventListener('click', () => { // 7/8/23 SEND YOUR GUESS
   if (boards[0].cards.some( _ => _ === null )) {  // 17/8/23 ADDED this from board.removeIncorrectCards 
     textBox.style.display = "flex";
     textBox.textContent = "You must place a card in each space on the board before submitting your guess."
-    return console.log('You foolish person, you need to fill all the spaces on the board with a card before submitting your guess!');} else { userGuessMap(); userClueMap(); console.log('guessMap='+guessMap); console.log('clueMap='+clueMap) // 5/9/23 userGuessMap added to log the users guess (now added clueMap here too to sync)
+    return console.log('You foolish person, you need to fill all the spaces on the board with a card before submitting your guess!');} else { userGuessMap(); userClueMap(); // 5/9/23 userGuessMap added to log the users guess (now added clueMap here too to sync)
   boards[0].removeIncorrectCards();   // TAKES OFF WRONG CARDS, KEEPS ORIENTATION OF BOARD SAME
   updateCardsOnBoard();
-  console.log(boards[0].slots); submitGuessButton.style.display = 'none'; // 10/9/23 added this to remove submitguessbutton after incorrect guess.
+   submitGuessButton.style.display = 'none'; // 10/9/23 added this to remove submitguessbutton after incorrect guess.
   updateSlotsOnBoard();
   disableCorrectCards();
   submitGuessCount++;  highlightCorrectCards(); // 5/9/23 added highlight after submitGuessCount to ensure correct cards are shown after one guess, but not when original are shown
@@ -839,7 +839,7 @@ submitGuessButton.addEventListener('click', () => { // 7/8/23 SEND YOUR GUESS
       <p><p>${totalScoreComment}<br><br><b>Clue-giver:</b> Prepare for the <i>Next Round</i>.`;
      // submitGuessButton.style.display = "none";  10/9.23 not needed as it is stated earlier, after cards removed
       newGameButton.style.display = "block";
-      console.log("totalscore="+totalScore);
+      
   } 
 }
 })
@@ -865,7 +865,7 @@ function updateCluesOnBoard() { //NEED THIS FOR ROTATION OF BOARD.
    
   //  console.log(cluesArray[index].value);
   });
-  console.log('foobardyhardypants444nd')
+  
 }
 
 
@@ -873,7 +873,7 @@ function enableAllCardslots() { console.log('submitGuessCount='+submitGuessCount
   if (submitGuessCount > 0 && submitGuessCount !== 2) { // MUST BE AFTER FIRST SUBMITGUESS, BUT NOT NEEDED SINCE ALL CARDSLOTS ENABLED ALREADY
     unpressedCardslotsOnBoard.forEach( cardslot => cardslot.removeAttribute('disabled'));
    } else if (submitGuessCount === 2) { // 10/9/23 added && submitguesscount != 2 above, and this else if statement so that all cardslots are disabled after second guess. Can change this if allow for more guesses, but will then have to amend some other functions. messy...
-    unpressedCardslotsOnBoard.forEach( cardslot => cardslot.setAttribute('disabled', 'disabled')); console.log('its been disabled correctly??')}
+    unpressedCardslotsOnBoard.forEach( cardslot => cardslot.setAttribute('disabled', 'disabled')); }
 } ;
 let pressedCardsIndices = [];
 let disableCardsCount = 0;
@@ -881,8 +881,8 @@ let disableCardsCount = 0;
 function disableCorrectCards() {  // DETERMINES THE FIRST (and subsequent) INDICES OF DISABLED CARD SLOTS
  // if (pressedCardsIndices.length > 0 || disableCardsCount === 0) {
     disableCardsCount++;
-    console.log('there are some correct cards');
-    console.log(disableCardsCount);
+    
+    
 //  if (submitGuessCount === 0) {
   for (let i=0 ; i < 4; i++) { if (boards[0].cards[i] !== null && !pressedCardsIndices.includes(i)) { 
     pressedCardsIndices.push(i);
@@ -893,7 +893,7 @@ function disableCorrectCards() {  // DETERMINES THE FIRST (and subsequent) INDIC
 //    pressedCardsIndices.forEach( i => unpressedCardslotsOnBoard[(i+1) % 4].setAttribute('disabled', 'disabled'));
 //  } else {console.log('Game ENDS');}
 //}
-console.log(unpressedCardslotsOnBoard.map(cardslot => cardslot.textContent));
+
 }
 
 
@@ -912,7 +912,7 @@ function rotateDisabledAnticlockwise() {
       unpressedCardslotsOnBoard[(i+3) % 4].setAttribute('disabled', 'disabled');
         return (i+3) % 4  } );
           } 
-  console.log(pressedCardsIndices)
+  
     };
 
 
@@ -958,10 +958,10 @@ newGameButton.addEventListener('click', () => { unpressSlots(); // 1/9/23 unpres
   boardClockwiseButton.style.backgroundColor = 'rgb(164, 221, 195)';
 //  submitCluesButton.style.display = "block"; // 1/9/23 NOT NEEDED cos only displays once clues written!
   // clueCards.forEach( rectangle => rectangle[0].style.display = "flex");
-  console.log(gridCards);
+  
   gridCards.forEach( cardslot => {cardslot.style.display = "flex"; cardslot.style.borderColor = 'rgb(0, 0, 0)'}); // 10/9/23 added cardslot's bordercolor = black in the new game.
   userClues.forEach( clue => clue.removeAttribute('disabled'));
-  console.log('poopylopp2');
+  
   toggleButton('card1');  // ADDED THESE 4 lines 5/8/23 TO SIMULATE ONE SWAP (and back again)
   toggleButton('card2');  // THIS WAS BECAUSE MY CODE ALWAYS SWAPS card3 when card4 is pressed
   toggleButton('card2');  // BUT AFTER ONE SWAP, THE CODE WORKS, SO I NEEDED TO SIMULATE ONE SWAP!!!
@@ -996,17 +996,17 @@ const slots = Array.from(document.querySelectorAll('cardslot')); // CHECK THIS..
     boards[0].addCardToBoard(boards[0].slots, boards[0].slots.indexOf(card), boards[0].cards, boards[0].originalCards.indexOf(card))}
     });
   //  boards[0].cards = boards[0].originalCards;
-    console.log(boards[0].cards[0].orientation2)
+    
     
     for (let i=currentBoardOrientation ; i > 0 ; i--) { boards[0].boardAnticlockwise() }; // 31/8/23 BOARD orientation same as what user left it.
     updateCardsOnBoard();  // DONE: 17/8/23 NEED TO do reset() and then make orientation2 = 0 for each card
     updateSlotsOnBoard();
     updateCluesOnBoard(); // 31/8/23
     disableCorrectCards(); // 31/8/23 ensures user cannot remove original cards from board.
-    console.log(boards[0].clues);
-    console.log(boards[0].originalCards);
-    console.log(boards[0].cards);
-    console.log(boards[0].originalCards[2]._words);
+    
+    
+
+
 });
 
 
@@ -1033,16 +1033,16 @@ const returnButton = document.getElementById('returnButton');
 
 userClues.forEach(inputField => {
   inputField.addEventListener('input', () => {
-    console.log('HELLO');
+    
     // Check if all input fields have non-empty values
     const allFieldsFilled = Array.from(userClues).every(input => input.value.trim() !== '');
 
     // Display or hide the button based on the condition
     if (allFieldsFilled) {
-      console.log('BLOB');
+      
       submitCluesButton.style.display = 'block';
     } else {
-      console.log('NOOO');
+      
       submitCluesButton.style.display = 'none';
       textBox.style.display = 'none';   // 1/9/23 does not show textBox if it was revealed ealier (as submitCluesButton disappears when one clue is blank)
     }
@@ -1051,7 +1051,7 @@ userClues.forEach(inputField => {
 
 
 function checkFullGrid() {
-  if (boards[0].cards.every(card => card !== null) && newGameButton.style.display !== "block") { console.log('all cardslots full: submitGuessButton only shows if its not end of Game')
+  if (boards[0].cards.every(card => card !== null) && newGameButton.style.display !== "block") { 
     submitGuessButton.style.display = 'block';
     textBox.style.display = 'none' // removes red warning box, if present
   } else {
@@ -1087,15 +1087,15 @@ function userGuessMap() {
 function forbidGuess() {  // 5/9/23 These cause border of card to go red if that card was already guessed, and green if its the correct card
   if (submitGuessCount > 0) {
   let index = clueMap.indexOf(boards[0].clues[0]);
-  console.log(index); console.log(clueMap); console.log(guessMap);
+  
   for (let i = 0; i < 4; i++) {
     if (!gridCards[i].disabled && boards[0].cards[i] !== null) {
-    console.log('FOOBAR2='+index); console.log("i="+i);
+    
     if (boards[0].cards[i].words[i] === guessMap[(i+index)%4]) {
-      console.log('MRBLOBBY='+index);
+      
       gridCards[i].style.borderColor = 'rgb(255, 0, 0)';
       textBox.style.display = 'none';
-      console.log('PPOP')
+      
     } else {      
       gridCards[i].style.borderColor = 'rgb(0, 0, 0)';
       
@@ -1104,7 +1104,7 @@ function forbidGuess() {  // 5/9/23 These cause border of card to go red if that
   { gridCards[i].style.borderColor = 'rgb(0, 0, 0)' };
   }
 if (gridCards.some(card => card.style.borderColor === 'rgb(255, 0, 0)')) {
-  submitGuessButton.style.display = 'none'; console.log('POPdsojj')
+  submitGuessButton.style.display = 'none'; 
 //} else if (submitGuessCount === 1) { console.log('changeback'); // 10/9/23 added if submitguesscount = 1 to ensure the button only reappears between first and second guess.
 //    submitGuessButton.style.display = 'block';
   }
@@ -1115,8 +1115,8 @@ if (gridCards.some(card => card.style.borderColor === 'rgb(255, 0, 0)')) {
 
 function highlightCorrectCards() {
   if (submitGuessCount > 0) {
-  for (let i = 0; i < 4; i++) { console.log('BOBOP2'+i);
-    if (gridCards[i].disabled) { console.log('should show white border');
+  for (let i = 0; i < 4; i++) { 
+    if (gridCards[i].disabled) { 
       gridCards[i].style.borderColor = 'rgb(255, 255, 255)';
       } else {
       gridCards[i].style.borderColor = 'rgb(0, 0, 0)'
@@ -1141,7 +1141,7 @@ function removeDuplicateWords(...arrays) {
       return wordlist;
     }; 
   
-console.log("combinedWords="+removeDuplicateWords(arrayOfWords1,arrayOfWords2,arrayOfWords3));
+
 
 
 function extractAtMostFourConsecutiveLetters(word, lengthOfSlice) {
@@ -1164,7 +1164,7 @@ function combinationsArrays(array) {
 }
 
 const words123 = ['apple', 'banana', 'carrot'];
-console.log(combinationsArrays(words123));
+
 const words234 = ['banarama', 'parrot', 'applet', 'robot'];
 
 function compareTwoArraysCommonWords(array1, array2) {
@@ -1172,7 +1172,7 @@ function compareTwoArraysCommonWords(array1, array2) {
   for (let i= 0; i < array1.length; i++) {
     for (let j = 0; j < array2.length; j++) {
       if (array1[i] === array2[j]) {
-        console.log(array1[i]);
+        
       }
     }
   }
@@ -1204,7 +1204,7 @@ function compareFamilyWords(array1, array2, length) {
 return commonWords;
 }
 
-console.log(compareFamilyWords(words123, words234, 4));
+
 
 
 
@@ -1238,7 +1238,7 @@ export const undercoverWords = undercoverWordlist.map( word => word.toLowerCase(
 compareTwoArraysCommonWords(words123, words234);
 
 
-console.log(compareFamilyWords(undercoverWords,soCloverWords,4));
+
 
 
 
@@ -1253,7 +1253,7 @@ function wordEndsInLetter(array, letter) { // 5/9/23 logs words from array that 
   return words;
 }
 
-console.log(wordEndsInLetter(undercoverWords, 's'));
+
 
 function wordContainsLetter(array, letter) { // 5/9/23 logs words from array that contain letter
   let words = [];
@@ -1268,14 +1268,14 @@ function wordContainsLetter(array, letter) { // 5/9/23 logs words from array tha
 }
 
 
-console.log(wordContainsLetter(soCloverWords, 'z'));
+
 
 // 5/9/23 this function overwrites soCloverWords from earlier, so only need let soCloverWords = [] earlier.
 // arrays is the collection of wordlists chosen from selectWordlist(), removeDuplicate..() makes words lowercase before removing.
 function createGame(...arrays) { 
   let wordlist = new Wordlist(removeDuplicateWords(...arrays));
   soCloverWords = wordlist.gameWords;
-  console.log('wordlist='+soCloverWords);
+  
   boards = generateBoards(soCloverWords);
   
   return boards;
@@ -1292,7 +1292,7 @@ summaryBox.innerHTML = "<b>Clue-giving phase:</b>\
 <p>The clue must be one word with no numbers or special characters. It should not be in the same word family as any word on a card.\
 <p>Once all four clues around the board are written, submit them and pass the controls over to your <i>team</i>."
 returnButton.style.display = "none";               // 24/8/23 changed from startGameButton.remove();
-console.log('why not working2')
+
 boardAnticlockwiseButton.style.display = "block";
 boardAnticlockwiseButton.style.cursor = "pointer";  // 12/8/23 ADDED pointer AND textContent to highlight button only AFTER GameStart
 boardAnticlockwiseButton.textContent = "Rotate board Anti-clockwise";
@@ -1303,10 +1303,10 @@ boardClockwiseButton.textContent = "Rotate board Clockwise";
 boardClockwiseButton.style.backgroundColor = 'rgb(164, 221, 195)';
 // submitCluesButton.style.display = "block";     // 24/8/23
 // clueCards.forEach( rectangle => rectangle[0].style.display = "flex");
-console.log(gridCards);
+
 gridCards.forEach( cardslot => cardslot.style.display = "flex");
 userClues.forEach( clue => clue.removeAttribute('disabled'));
-console.log('poopylopp2');
+
 toggleButton('card1');  // ADDED THESE 4 lines 5/8/23 TO SIMULATE ONE SWAP (and back again)
 toggleButton('card2');  // THIS WAS BECAUSE MY CODE ALWAYS SWAPS card3 when card4 is pressed
 toggleButton('card2');  // BUT AFTER ONE SWAP, THE CODE WORKS, SO I NEEDED TO SIMULATE ONE SWAP!!!

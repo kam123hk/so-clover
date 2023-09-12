@@ -16,17 +16,17 @@ export class Board {
   toggleButton(buttonId) {
   const button = document.getElementById(buttonId); // button id of toggled button in html body (what you are pressing now)
   if (button === currentPressedButtonId) {    // if button id of toggled is same as id of button currently pressed
-    console.log('poopywoopy');
+    
     currentPressedButtonId = null;    // denotes no button is pressed (unpress this buttonId) so no buttons pressed on the board
     button.classList.remove('pressed'); // Remove the pressed class from this buttonId
     button.classList.add('unpressed'); // Add the unpressed class to this buttonId
   } else if (currentPressedButtonId === null) {
     currentPressedButtonId = button;
-    console.log('luupy');
+    
     button.classList.remove('unpressed');
     button.classList.add('pressed');
   } else {
-    console.log('tyiirp');
+    
     boards[0].addCardToBoard(boards[0].cards,parseInt(currentPressedButtonId),boards[0].cards,parseInt(button));
    // currentPressedButtonId.classList.remove('pressed');
    // currentPressedButtonId.classList.add('unpressed');
@@ -51,14 +51,14 @@ this.slots = [];
           }
         for (let i = 0 ; i < 4 + difficulty; i++) { // 31/8/23 WAS just i < 6
             this.slots[i] = null;               //ADDED THIS TO CREATE SLOTS, ASK DAN WHY.. (see this.slots in Board class above)
-        console.log(this.slots);
+        
     }
-    console.log('po');
-    console.log(this.cards);
-    console.log('poo');
+    
+    
+    
         this.getCardsOnBoardPosition; // THIS WAS ORIGINALLY HERE> BUT CAUSES ERROR WHEN TOGETHER WITH PLOOPY
-console.log(this.cards);
-console.log('pootoyy');
+
+
 return this.cards;
 //return ploopy;
         }
@@ -71,7 +71,7 @@ return this.cards;
         }
 
         //only need to check first word of each _words:
-        removeIncorrectCards() { console.log('WHERE AM I HAHAH');
+        removeIncorrectCards() { 
 const currentBoardOrientation = this.orientation % 4; // 7/8/23 NEED THIS FOR LATER ON IN THIS FUNCTION
 // 17/8/23 removed these two lines: if (this.cards.some( _ => _ === null )) {
 // return console.log('You foolish person, you need to fill all the spaces on the board with a card before submitting your guess!');} else {
@@ -79,7 +79,7 @@ const currentBoardOrientation = this.orientation % 4; // 7/8/23 NEED THIS FOR LA
 this.slots.forEach((element, index, arr) => {
 if (element !== null && index !== this.cards.length + difficulty - 1) {  // 6/8/23 SENDS CARD NOT PUT ON BOARD TO END OF SLOTS
     arr[this.cards.length + difficulty - 1] = element;                     // 8/8/23 NOW REMOVED THIS forEach (see below)
-    console.log(arr[this.cards.length + difficulty - 1]);     // 31/8/23 These 7 lines from this.slots.forEach onwards now reinstated, with 'difficulty' instead '5'.
+         // 31/8/23 These 7 lines from this.slots.forEach onwards now reinstated, with 'difficulty' instead '5'.
     arr[index] = null;
   }
 });
@@ -92,7 +92,7 @@ if (element !== null && index !== this.cards.length + difficulty - 1) {  // 6/8/
       //        })
        //       console.log(this.slots);
        this.reset;    // 6/8/23 NEEDED THIS TO RESET BOARD BEFORE CHECKING CARDS
-         for ( let i=0; i < this.cards.length; i++)  { console.log('ROOOOOOOOOOOB');
+         for ( let i=0; i < this.cards.length; i++)  { 
           if (this.cards[i].words[0] !== this.originalCards[i]._words[0] )  { // 5/8/23 CHANGED _words to .words in this.cards[i] now working as intended (essentially checking the orientation of the card as well)
             this.cards[i].orientation2 += currentBoardOrientation;
             this.addCardToBoard(this.cards, i, this.slots, (i+4-currentBoardOrientation)%4); // 5/9/23 NOW cards are send to the ith slot no matter the board orientation
@@ -103,7 +103,7 @@ if (element !== null && index !== this.cards.length + difficulty - 1) {  // 6/8/
 for (let i=currentBoardOrientation ; i > 0 ; i--) { this.boardAnticlockwise() };
 // 7/8/23 for LOOP ABOVE GETS THE ORIENTATION SAME AS BEFORE RESET. NEED THIS AS BOARD NOT UPDATED AFTER GUESS SUBMITTED, BUT CARDS ARE RESET.
 // 17/8/23 removed the 'You're foolish statement for not submitting all cards        }
-console.log(this.slots);
+
         }
 
         // this pushes (up to) six null at the end of slots to initalise the slots (NOT ANYMORE 5/8/23, see below). Then as long as there are cards on the board, they will be placed in a random slot. This function is only done once as part of the card initialisation.
@@ -121,11 +121,11 @@ console.log(this.slots);
 //        };
         const extraCardPosition = Math.floor(Math.random() * (this.cards.length + difficulty));
         let extraCard = new Card(soCloverWords);
-  console.log(extraCard);
+  
         while (this.clues.some( clue => extraCard._words.some( word => clue.toLowerCase() === word.toLowerCase() ) )) {
           extraCard = new Card(soCloverWords);
         }  // 7/8/23 NOW CANNOT HAVE CLUE WORDS IN EXTRA CARD WITH THIS while LOOP (GETS NEW CARD ALONG THE WORDLIST)
-   console.log(extraCard);
+   
         this.slots.splice(extraCardPosition, 1, extraCard);
         usedSlotIndex.push(extraCardPosition);
         while (this.cards.some( _ => _ !== null)) {
@@ -189,7 +189,7 @@ console.log(this.slots);
             this.clues = this.clues.map( (_, index, arr) => arr[  (index + 3) % 4] );
           
           // so the cards rotate clockwise too. i guess everything is relative to person viewing the screen:
-console.log('i am ready');
+
         ;
         }
         boardAnticlockwise()
