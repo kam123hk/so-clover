@@ -1,6 +1,7 @@
 # so-clover
 ## Getting started
-1. npm install (this downloads the dependencies)
-2. type in terminal: @kam123hk ➜ /workspaces/so-clover (main) $ 
-3. node app.js (this runs the code)
-4. to create boards: import wordlist and declare _wordlist = new Wordlist(wordlist). then declare const boards = generateBoards(_wordlist.gameWords)
+(terminal)
+1. npm install -g http-server
+2. http-server
+(broswer)
+3. http://localhost:8080/clover.html
